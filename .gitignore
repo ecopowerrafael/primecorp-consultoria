@@ -1,0 +1,24 @@
+# Segredos — nunca versionar
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Temporários / build
+node_modules/
+dist/
+*.log
+*.zip
+*.bak
+*~
