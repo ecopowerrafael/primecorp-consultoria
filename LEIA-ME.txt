@@ -6,11 +6,14 @@ CONTEUDO DESTA PASTA
   base-municipios.js ..... base do IBGE com todos os municipios
   primecorp-simbolo.svg .. simbolo da marca
   favicon.png ............ icone que aparece na aba do navegador
+  primecorp-og.png ....... imagem de compartilhamento (1200 x 630)
+  robots.txt ............. regras de rastreamento
+  sitemap.xml ............ sitemap da URL canonica da etapa atual
+  _headers ............... headers de seguranca da Netlify
 
-IMPORTANTE: os tres ultimos arquivos ja eram chamados pelo site
-publicado, mas nao estavam no servidor (respondiam erro 404). Por
-isso aparecia o aviso "a lista de municipios nao carregou". Publique
-os quatro juntos, na mesma pasta.
+IMPORTANTE: publique os arquivos do pacote juntos, na mesma pasta.
+O primecorp-og.svg e a fonte vetorial editavel da imagem social; o
+arquivo usado pelo Open Graph e pelo Twitter Card e o PNG.
 
 
 ANTES DE COMECAR — LEIA ESTE PARAGRAFO
