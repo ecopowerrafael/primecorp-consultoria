@@ -10,7 +10,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:92px}
-body{font-family:Geist,Inter,system-ui,-apple-system,sans-serif;font-size:15.5px;line-height:1.65;color:var(--tinta);background:var(--papel);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body{font-family:Geist,Inter,system-ui,-apple-system,sans-serif;font-size:15.5px;line-height:1.65;color:var(--tinta);background:var(--papel);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,.ff{font-family:"Bricolage Grotesque",Geist,sans-serif;font-weight:600;letter-spacing:-.025em;line-height:1.12;
   font-variation-settings:"wdth" 92}
 h3,h4{font-family:Geist,Inter,sans-serif;letter-spacing:-.012em;line-height:1.3}
@@ -45,6 +45,7 @@ img{max-width:100%;display:block}
 .btn-sm{padding:11px 17px;font-size:13.5px;min-height:42px}.btn-full{width:100%}
 
 header{position:fixed;top:0;left:0;right:0;z-index:90;transition:.25s;padding:13px 0}
+header .wrap{max-width:1440px;padding-left:24px;padding-right:24px}
 header.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--linha);padding:9px 0}
 .nav{display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:14px;margin-right:auto;position:relative;z-index:90}
@@ -90,7 +91,7 @@ header.solid .logo-tag{font-size:7.7px;letter-spacing:.275em}
    página aberta fica marcado permanentemente */
 .menu a{position:relative;padding:12px 15px 14px;border-radius:10px;font-size:14px;font-weight:500;
   color:rgba(255,255,255,.8);letter-spacing:.006em;display:inline-flex;align-items:center;gap:7px;
-  transition:color .2s,background .2s,transform .2s cubic-bezier(.22,1,.36,1)}
+  white-space:nowrap;transition:color .2s,background .2s,transform .2s cubic-bezier(.22,1,.36,1)}
 .menu a::after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;
   background:linear-gradient(90deg,var(--vermelho),rgba(213,56,58,.4));
   transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.22,1,.36,1)}
@@ -113,7 +114,9 @@ header.solid .menu a.ativo{color:var(--carvao);background:rgba(213,56,58,.08)}
 .manif .voltar:hover,.contato .voltar:hover{color:#fff;border-color:rgba(255,255,255,.45);box-shadow:none}
 .burger{display:none;position:relative;z-index:90;width:46px;height:44px;border-radius:8px;align-items:center;justify-content:center;color:#fff}
 header.solid .burger{color:var(--carvao)}.burger svg{width:22px;height:22px}
-@media(max-width:1150px){
+/* Até 1.399px a faixa útil não comporta os onze links e o CTA
+   sem reduzir a leitura. O menu mobile entra antes de qualquer compressão. */
+@media(max-width:1399px){
   .menu{position:fixed;inset:0;background:#fff;padding-top:78px;justify-content:flex-start;flex-direction:column;align-items:stretch;padding:82px 18px 24px;gap:2px;display:none;overflow:auto;z-index:80}
   .menu.open{display:flex}
   .menu{height:100dvh;min-height:100vh}
@@ -139,7 +142,18 @@ header.solid .burger{color:var(--carvao)}.burger svg{width:22px;height:22px}
   .menu a.btn-p::after{display:none}
   .burger{display:flex}.nav>.btn{display:none}.menu .btn{display:inline-flex;margin-top:8px}
 }
-@media(min-width:1151px){.menu .btn-mob{display:none}}
+@media(min-width:1400px){.menu .btn-mob{display:none}}
+
+@media(min-width:1400px) and (max-width:1600px){
+  header .wrap{padding-left:18px;padding-right:18px}
+  .nav{gap:8px}
+  .brand{gap:10px}
+  .logo-sim{height:52px}
+  .menu{gap:1px}
+  .menu a{padding-left:10px;padding-right:10px;font-size:13px}
+  .menu a::after{left:10px;right:10px}
+  .nav>.btn{padding-left:14px;padding-right:14px;font-size:13px}
+}
 
 .hero{position:relative;background:linear-gradient(158deg,#31373a 0%,#1e2224 55%,#141719 100%);color:#fff;padding:170px 0 84px;overflow:hidden}
 .hero::before{content:"";position:absolute;left:52%;top:-24%;width:900px;height:900px;pointer-events:none;

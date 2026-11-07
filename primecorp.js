@@ -72,6 +72,14 @@ document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{
   document.getElementById('menu').classList.remove('open');document.body.style.overflow='';
   const b=document.querySelector('.burger');
   if(b){b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menu')}}));
+document.addEventListener('keydown',e=>{
+  const m=document.getElementById('menu');
+  if(e.key==='Escape'&&m?.classList.contains('open'))menuTog();
+});
+addEventListener('resize',()=>{
+  const m=document.getElementById('menu');
+  if(innerWidth>=1400&&m?.classList.contains('open'))menuTog();
+});
 
 /* ============ BARRA DO TOPO ============
    O site agora tem paginas de verdade: cada assunto no seu endereco.
